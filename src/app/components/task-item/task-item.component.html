@@ -1,4 +1,4 @@
-<div class="task">
+<div class="task" (dblclick)="onToggle(tarefa)" [class.reminder]="tarefa.concluido">
   <div class="task-content">
     <h3>{{ tarefa.tarefa }}</h3>
     <p>{{ tarefa.categoria }}</p>
