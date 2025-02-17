@@ -1,0 +1,3 @@
+@for (tarefa of tarefas; track $index) {
+  <app-task-item [tarefa]="tarefa" (onDeleteTask)="deleteTask($event)"></app-task-item>
+}
