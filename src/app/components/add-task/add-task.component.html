@@ -1,1 +1,37 @@
-<p>add-task works!</p>
+@if (mostrarAddTarefa) {
+  <app-button text="Fechar" color="red" (btnClick)="chooseView()"></app-button>
+} @else {
+  <app-button text="Adicionar Tarefa" color="green" (btnClick)="chooseView()"></app-button>
+}
+
+<form (submit)="onSubmit()" *ngIf="mostrarAddTarefa" class="add-form">
+  <div>
+    <label for="text">Tarefa:</label>
+    <input type="text"
+      id="text"
+      name="text"
+      class="form-control"
+      placeholder="Adicionar tarefa"
+      [(ngModel)]="tarefa"
+    >
+  </div>
+
+  <div class="mb-4">
+    <label for="category">Categoria:</label>
+    <select
+      id="categoria"
+      name="categoria"
+      class="form-select"
+      [(ngModel)]="categoria"
+    >
+      <option value="">Selecione uma categoria</option>
+      <option value="casa">Casa</option>
+      <option value="trabalho">Trabalho</option>
+      <option value="faculdade">Faculdade</option>
+      <option value="academia">Academia</option>
+      <option value="lazer">Lazer</option>
+    </select>
+  </div>
+
+  <input type="submit" value="Salvar Tarefa" class="btn btn-block mb-4">
+</form>
